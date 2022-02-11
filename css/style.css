@@ -1,0 +1,275 @@
+:root {
+    --bg-color: rgba(0, 128, 255, 0.5);
+    --blue: #46A2FD;
+    --grey: #F2F2F2;
+    --white: #fff;
+    --black: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--blue);
+}
+
+/***** General Container Starts *****/
+.general__container {
+    width: 100%;
+    min-height: 100vh;
+    background: url(../images/background.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/***** General Container Ends *****/
+
+/***** Notification Container Starts *****/
+.notification__container {
+    max-width: 230px;
+    padding: 30px;
+    background: var(--bg-color);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    visibility: hidden;
+}
+
+.notification__container h3 {
+    color: var(--white);
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+/***** Notification Container Ends *****/
+
+.content__container {
+    max-width: 800px;
+    position: relative;
+}
+
+/***** Background Box Container Starts *****/
+.background__container {
+    width: 100%;
+    padding: 10px;
+    background: var(--bg-color);
+    backdrop-filter: blur(7px);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background__container .box {
+    padding: 80px 40px;  
+    color: var(--white);
+    transition: opacity 0.6s ease;
+}
+
+.box h2 {
+    font-weight: 500;
+}
+
+.box p {
+    margin: 25px 0;
+    font-size: 1rem;
+}
+
+.box .button {
+    padding: 10px 30px;
+    background: transparent;
+    border: 2px solid var(--white);
+    border-radius: 5px;
+    outline: none;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.box .button:hover {
+    background: var(--white);
+    border: 2px solid var(--blue);
+    color: var(--blue);
+}
+
+.login__box {
+    opacity: 0;
+}
+/***** Background Box Container Ends *****/
+
+/***** Forms Container Starts *****/
+.forms__container {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -167px;
+    left: 10px;
+    transition: left 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.forms__container .form {
+    width: 100%;
+    padding: 60px 20px;
+    background: var(--white);
+    border-radius: 20px;
+    position: absolute;
+}
+
+.form h2 {
+    margin-bottom: 10px;
+    color: var(--blue);
+    text-align: center; 
+    font-size: 1.7rem;   
+}
+
+.form .input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background: var(--grey);
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    color: var(--black);
+    font-size: 16px;
+}
+
+.form .button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: var(--blue);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form .button:hover {
+    opacity: 0.9;
+}
+
+#login__form {
+    display: block;
+    opacity: 1;
+}
+
+#login__form .checkbox {
+    text-align: right;
+}
+
+#login__form .checkbox label {
+    margin-left: 5px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+#login__form p {
+    display: block;
+    margin-top: 30px;
+    color: var(--blue);
+    text-align: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#login__form p:hover {
+    text-decoration: underline;
+}
+
+#register__form {
+    display: none;
+}
+/***** Forms Container Ends *****/
+
+/***** Responsive Design Starts *****/
+@media screen and (max-width: 850px) {
+
+    /*** General Container ***/
+    .general__container {
+        padding: 60px 0;
+    }
+
+    /*** Background Box Container ***/
+    .background__container {
+        width: 320px;
+        height: 300px;
+        margin: auto;
+        position: relative;
+    }
+
+    .background__container .box {
+        padding: 20px;
+        position: absolute;
+    }
+
+    /*** Forms Container ***/
+    .forms__container {
+        margin: auto;
+        top: -10px;
+        left: 0;
+    }
+
+    .forms__container .form {
+        position: relative;
+    }
+    
+}
+
+@media screen and (max-width: 420px) {
+
+    /*** Background Box Container ***/
+    .background__container {
+        width: 80%;
+        height: 230px;
+    }
+
+    .background__container .box h2 {
+        font-size: 1.3rem;
+    }
+    
+    .background__container .box p {
+        font-size: 0.9rem;
+    }
+
+    .background__container .box .button {
+        padding: 6px 20px;
+        font-size: 12px;
+    }
+
+    /*** Forms Container ***/
+    .forms__container {
+        width: 90%;
+    }
+
+    .forms__container .form {
+        padding: 50px 20px;
+    }
+
+}
+/***** Responsive Design Ends *****/
